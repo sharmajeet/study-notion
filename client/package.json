@@ -38,11 +38,10 @@
   },
   "author": "Jeet Sharma",
   "bugs": {
-    "url": " "
+    "url": "https://github.com/jeetsharma"
   },
   "scripts": {
-    "start": "PORT=3000 react-scripts --max_old_space_size=768m start",
-    "start1": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "server": "cd server && npm run dev",
