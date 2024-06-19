@@ -53,6 +53,7 @@ app.use("/api/v1/contact", require("./routes/ContactUs"));
 
 app.use(express.static(path.join(__dirname, '../client/build')));
 
+// Serving react build
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
