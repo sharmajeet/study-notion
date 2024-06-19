@@ -2,6 +2,7 @@ const express = require("express");
 
 const app = express();
 
+const path = require('path');
 const userRoutes = require("./routes/User");
 const paymentRoutes = require("./routes/Payments");
 const profileRoutes = require("./routes/Profile");
@@ -50,10 +51,11 @@ app.use("/api/v1/course", CourseRoutes);
 
 app.use("/api/v1/contact", require("./routes/ContactUs"));
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "Welcome to the API",
-  });
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Serving react build
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 app.listen(PORT, () => {
